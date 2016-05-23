@@ -27,8 +27,8 @@ public class Main extends Application {
 	            new KeyFrame(Duration.ZERO, new KeyValue(translateX, 45)),
 	            new KeyFrame(new Duration(1000), new KeyValue(translateX, -45))
 	        );
-	        //timeline.setAutoReverse(true);
-	        //timeline.setCycleCount(Timeline.INDEFINITE);
+	        timeline.setAutoReverse(true);
+	        timeline.setCycleCount(Timeline.INDEFINITE);
 	        timeline.play();
 
 			
