@@ -20,11 +20,12 @@ public class Main extends Application {
 			loader.setLocation(getClass().getResource("Root.fxml"));
 			BorderPane root =  (BorderPane) loader.load();
 			
+			//Créer l'objet property qui va manipuler la translation horizontale du panel de gauche
 			DoubleProperty translateX = root.getLeft().translateXProperty();
 			Timeline timeline = new Timeline();
 	        timeline.getKeyFrames().addAll(
 	            new KeyFrame(Duration.ZERO, new KeyValue(translateX, 45)),
-	            new KeyFrame(new Duration(1000), new KeyValue(translateX, -45))
+	            new KeyFrame(new Duration(1000), new KeyValue(translateX, -200))
 	        );
 	        timeline.setAutoReverse(true);
 	        timeline.setCycleCount(Timeline.INDEFINITE);
