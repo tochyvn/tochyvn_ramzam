@@ -46,6 +46,7 @@ public class PieChartController implements Initializable {
 		            public void handle(MouseEvent e) {
 		                caption.setTranslateX(e.getSceneX());
 		                caption.setTranslateY(e.getSceneY());
+		                System.out.println("X : "+e.getSceneX()+"  Y : "+e.getSceneY());
 		                caption.setText(String.valueOf(data.getPieValue()) + "%");
 		            }
 		        });
