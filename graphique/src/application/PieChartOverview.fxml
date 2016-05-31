@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+
+<BorderPane prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PieChartController">
+   <right>
+      <Pane prefHeight="417.0" prefWidth="77.0" BorderPane.alignment="CENTER" />
+   </right>
+   <bottom>
+      <Pane prefHeight="88.0" prefWidth="500.0" BorderPane.alignment="CENTER" />
+   </bottom>
+   <center>
+      <PieChart fx:id="pieChart" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>
