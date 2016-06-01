@@ -22,6 +22,8 @@ public class Popup extends Stage {
 	public Popup(Scene scene) {
 		super();
 		this.setScene(scene);
+		this.setWidth(400);
+		this.setHeight(400);
 		this.initModality(Modality.APPLICATION_MODAL);
 	}
 
@@ -48,7 +50,7 @@ public class Popup extends Stage {
 		loader.setLocation(Main.class.getResource(path));
 		Parent rootLayout;
 		try {
-			rootLayout = (Parent)loader.load();
+			rootLayout = null;
 			switch (typeLayout) {
 			case 0:
 				rootLayout = (BorderPane)loader.load();

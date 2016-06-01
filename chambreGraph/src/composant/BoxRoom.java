@@ -53,7 +53,22 @@ public class BoxRoom extends VBox {
 	public void addEvent() {
 		this.setOnMouseClicked((event) -> {
 			System.out.println(event.getSource());
+			String path = "/application/PopupOverview.fxml";
+			Scene scene = Popup.loadScene(path, 0);
 			
+			Popup popup = new Popup(scene);
+			popup.setTitle("My modal window");
+			popup.initOwner((((Node) event.getSource()).getScene()).getWindow());
+			popup.setOnCloseRequest(new EventHandler<WindowEvent>() {
+
+				@Override
+				public void handle(WindowEvent event) {
+					System.out.println("Mettre la variable statique de chambre à NULL");
+				}
+			});
+			popup.showAndWait();
+			
+			/*
 			Stage secondStage = new Stage();
 			BorderPane root = new BorderPane();
 			Scene scene = new Scene(root,400,400);
@@ -69,6 +84,7 @@ public class BoxRoom extends VBox {
 				}
 			});
 			secondStage.showAndWait();
+			*/
 			
 		});
 		
