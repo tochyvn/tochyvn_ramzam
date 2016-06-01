@@ -3,11 +3,17 @@ package composant;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.Cursor;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 import model.Chambre;
 
 public class BoxRoom extends VBox {
@@ -46,6 +52,21 @@ public class BoxRoom extends VBox {
 	public void addEvent() {
 		this.setOnMouseClicked((event) -> {
 			System.out.println(event.getSource());
+			String path = "/application/PopupOverview.fxml";
+			Scene scene = Popup.loadScene(path, 0);
+			
+			Popup popup = new Popup(scene);
+			popup.setTitle("My modal window");
+			popup.initOwner((((Node) event.getSource()).getScene()).getWindow());
+			popup.setOnCloseRequest(new EventHandler<WindowEvent>() {
+
+				@Override
+				public void handle(WindowEvent event) {
+					System.out.println("Mettre la variable statique de chambre à NULL");
+				}
+			});
+			popup.showAndWait();
+			
 			/*
 			Stage secondStage = new Stage();
 			BorderPane root = new BorderPane();
@@ -63,6 +84,7 @@ public class BoxRoom extends VBox {
 			});
 			secondStage.showAndWait();
 			*/
+			
 		});
 		
 		this.setOnMouseEntered(new EventHandler<Event>() {

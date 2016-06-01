@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 
@@ -9,7 +10,10 @@
       <Pane prefHeight="417.0" prefWidth="77.0" BorderPane.alignment="CENTER" />
    </right>
    <bottom>
-      <Pane prefHeight="88.0" prefWidth="500.0" BorderPane.alignment="CENTER" />
+      <Pane prefHeight="88.0" prefWidth="500.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="pourcentage" layoutX="24.0" layoutY="36.0" text="TOTAL 100%" />
+         </children></Pane>
    </bottom>
    <center>
       <PieChart fx:id="pieChart" BorderPane.alignment="CENTER" />

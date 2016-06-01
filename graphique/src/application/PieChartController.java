@@ -18,6 +18,9 @@ public class PieChartController implements Initializable {
 	@FXML
 	private PieChart pieChart;
 	
+	@FXML
+	private Label pourcentage;
+	
 	private ObservableList<PieChart.Data> pieCharData;
 
 	@Override
@@ -35,19 +38,19 @@ public class PieChartController implements Initializable {
 		pieChart.setData(pieCharData);
 		pieChart.setTitle("Statut des chambres");
 		
-		final Label caption = new Label("dfgsdfgdfgsgdf");
-		caption.setTextFill(Color.DARKORANGE);
-		caption.setStyle("-fx-font: 24 arial;");
+		pourcentage.setTextFill(Color.BLUE);
+		
+		pourcentage.setStyle("-fx-font: 24 arial;");
 
 		for (final PieChart.Data data : pieChart.getData()) {
 		    data.getNode().addEventHandler(MouseEvent.MOUSE_PRESSED,
 		        new EventHandler<MouseEvent>() {
 		            @Override 
 		            public void handle(MouseEvent e) {
-		                caption.setTranslateX(e.getSceneX());
-		                caption.setTranslateY(e.getSceneY());
-		                System.out.println("X : "+e.getSceneX()+"  Y : "+e.getSceneY());
-		                caption.setText(String.valueOf(data.getPieValue()) + "%");
+		            	pourcentage.setTranslateX(e.getSceneX());
+		            	//pourcentage.setTranslateY(e.getSceneY());
+		                System.out.println("X : "+e.getSceneX()+"  Y : "+e.getSceneY()+" Value : "+data.getPieValue());
+		                pourcentage.setText(String.valueOf(data.getPieValue()) + "%");
 		            }
 		        });
 		}
