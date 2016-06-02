@@ -13,6 +13,8 @@ public class ListRoom extends FlowPane {
 	
 	private ObservableList<BoxRoom> rooms;
 	private ScrollPane parentScrollPane;
+	//La chambre selectionnée dans la liste de chambre
+	public static Chambre roomSelected;
 
 	
 	public ListRoom() {
