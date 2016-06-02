@@ -14,11 +14,7 @@ public class ListRoom extends FlowPane {
 	private ObservableList<BoxRoom> rooms;
 	private ScrollPane parentScrollPane;
 
-	public ScrollPane getParentScrollPane() {
-		return parentScrollPane;
-	}
-
-
+	
 	public ListRoom() {
 		rooms = FXCollections.observableArrayList();
 	}
@@ -30,7 +26,7 @@ public class ListRoom extends FlowPane {
 	public ListRoom(double hgap, double vgap) {
 		super(hgap, vgap);
 	}
-
+	
 
 	public ListRoom(ArrayList<Chambre> chambres) {
 		this(Orientation.HORIZONTAL);
@@ -51,17 +47,28 @@ public class ListRoom extends FlowPane {
 			this.getChildren().add(boxRoom);
 		}
 	}
-	
-	public boolean addItems(BoxRoom boxRoom) {
+	/**
+	 * Ajouter une BoxRoom à la liste observable de BoxRoom
+	 * @param boxRoom la room à ajouter
+	 * @return Retourne la BoxRoom ajoutée
+	 */
+	public boolean addItem(BoxRoom boxRoom) {
 		return this.rooms.add(boxRoom);
 	}
 	
+	/**
+	 * Methode qui prend en paramètre une arraylist de room et remplis la liste de Room
+	 * @param chambres
+	 */
 	private void putRoom(ArrayList<Chambre> chambres) {
 		for (Chambre chambre : chambres) {
 			BoxRoom boxRoom = new BoxRoom(chambre, false);
 			this.getChildren().add(boxRoom);
-			//this.rooms.add(boxRoom);
 		}
+	}
+	
+	public ScrollPane getParentScrollPane() {
+		return parentScrollPane;
 	}
 
 }

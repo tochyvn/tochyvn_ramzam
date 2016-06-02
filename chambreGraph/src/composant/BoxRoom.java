@@ -26,7 +26,6 @@ public class BoxRoom extends VBox {
 
 	public BoxRoom(double spacing) {
 		super(spacing);
-		// TODO Auto-generated constructor stub
 	}
 	
 	public BoxRoom(Chambre chambre, boolean image) {
