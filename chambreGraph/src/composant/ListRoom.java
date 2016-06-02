@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.FlowPane;
@@ -66,6 +67,8 @@ public class ListRoom extends FlowPane {
 		for (Chambre chambre : chambres) {
 			BoxRoom boxRoom = new BoxRoom(chambre, false);
 			this.getChildren().add(boxRoom);
+			//Ici on met une marge entre les différentes BoxRoom <====> Chambre
+			setMargin(boxRoom, new Insets(12, 5, 10, 20));
 		}
 	}
 	

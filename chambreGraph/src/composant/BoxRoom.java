@@ -1,5 +1,6 @@
 package composant;
 
+
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.Cursor;
@@ -29,22 +30,19 @@ public class BoxRoom extends VBox {
 		this(5.0);
 		this.chambre = chambre;
 		String url = "/ressources/img/libre.png";
+		this.getStyleClass().add("box-room-shadow");
 		if (image) {
 			url = "/ressources/img/occupe.png";
 		}
 		Image img = new Image(url);
 		ImageView imageView = new ImageView(img);
-		this.getChildren().add(0, imageView);
 		Pane panel = new Pane();
-		panel.getChildren().add(new Label(chambre.toString()));
-		this.getChildren().add(1, panel);
+		
+		Label roomLabel = new Label(chambre.toString());
+		panel.getChildren().add(roomLabel);
+		this.getChildren().addAll(imageView, panel);
 		//Ajouter l'evenement qui se produira au clique
 		this.addEvent();
-	
-		
-		//System.out.println(this.getPrefWidth()+" Haut : "+this.getPrefHeight());
-		//System.out.println(panel.getPrefWidth()+" Haut : "+panel.getPrefHeight());
-		
 	}
 	
 	public void addEvent() {
@@ -52,6 +50,7 @@ public class BoxRoom extends VBox {
 			
 			//On recupère la BoxRoom sur laquelle l'on a cliqué
 			BoxRoom room = (BoxRoom) event.getSource();
+			//On affecte cette chambre à la variable statique afin de pouvoir la récupérer dans la Popup
 			ListRoom.roomSelected = room.chambre;
 			System.out.println(room);
 			
