@@ -69,6 +69,7 @@ public class BoxRoom extends VBox {
 				@Override
 				public void handle(WindowEvent event) {
 					System.out.println("Mettre la variable statique de chambre à NULL");
+					ListRoom.roomSelected = null;
 				}
 			});
 			popup.showAndWait();
