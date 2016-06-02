@@ -26,11 +26,6 @@ public class ListRoom extends FlowPane {
 		super(orientation);
 	}
 
-	public ListRoom(double hgap, double vgap) {
-		super(hgap, vgap);
-	}
-	
-
 	public ListRoom(ArrayList<Chambre> chambres) {
 		this(Orientation.HORIZONTAL);
 		this.rooms = FXCollections.observableArrayList();

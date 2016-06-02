@@ -17,7 +17,7 @@ public class Main extends Application {
 			BorderPane root = new BorderPane();
 			ListRoom listeChambres = new ListRoom(this.getChambres());
 			root.setCenter(listeChambres.getParentScrollPane());
-			Scene scene = new Scene(root,400,400);
+			Scene scene = new Scene(root,900,300);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.show();

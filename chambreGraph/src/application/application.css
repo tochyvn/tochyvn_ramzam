@@ -3,4 +3,5 @@
 -fx-background-color:  #4CAF50;
 -fx-border-radius: 7px;
 -fx-effect:  dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+-fx-border-color: red;
 }
