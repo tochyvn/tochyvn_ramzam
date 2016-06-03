@@ -64,6 +64,10 @@ public class RootController implements Initializable {
 		return root;
 	}
 	
+	/**
+	 * Créer des animation sur l'opacité d'un composante
+	 * @param opacity
+	 */
 	private void doAnimationOpacity(DoubleProperty opacity) {
 		Timeline timeline = new Timeline();
         timeline.getKeyFrames().addAll(
