@@ -20,7 +20,7 @@ public class Main extends Application {
 			loader.setLocation(getClass().getResource("Root.fxml"));
 			BorderPane root =  (BorderPane) loader.load();
 			
-			//Créer l'objet property qui va manipuler la translation horizontale du panel de gauche
+			//Créer l'objet property qui va manipuler la translationProperty horizontale du panel de gauche dans la BorderPane
 			DoubleProperty translateX = root.getLeft().translateXProperty();
 			Timeline timeline = new Timeline();
 	        timeline.getKeyFrames().addAll(
