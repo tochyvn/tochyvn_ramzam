@@ -9,6 +9,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import model.Employee;
@@ -23,17 +24,19 @@ public class EmployeeController implements Initializable {
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+		gridEmployee.setAlignment(Pos.CENTER);
 		employees = FXCollections.observableArrayList();
 		employees.addAll(getEmployees());
 		int line = 1;
 		for (Employee employee : employees) {
-			gridEmployee.add(new Pane(new MonLabel(employee.getNom())), 0, line);
-			gridEmployee.add(new Pane(new MonLabel(employee.getPoste())), 1, line);
-			gridEmployee.add(new Pane(new MonLabel(employee.getAdresse())), 2, line);
-			gridEmployee.add(new Pane(new MonLabel(employee.getSalaire()+"")), 3, line);
-			gridEmployee.add(new Pane(new MonLabel("AJOUTER OU SUPPRIMER")), 4, line);
+			gridEmployee.add(new MonLabel(employee.getNom()), 0, line);
+			gridEmployee.add(new MonLabel(employee.getPoste()), 1, line);
+			gridEmployee.add(new MonLabel(employee.getAdresse()), 2, line);
+			gridEmployee.add(new MonLabel(employee.getSalaire()+""), 3, line);
+			gridEmployee.add(new MonLabel("AJOUTER OU SUPPRIMER"), 4, line);
 			line++;
 		}
+		
 	}
 	
 	private ArrayList<Employee> getEmployees() {
