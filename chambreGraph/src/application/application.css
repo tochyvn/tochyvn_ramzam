@@ -1,7 +1,31 @@
 /* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
-.box-room-shadow {
--fx-background-color:  #4CAF50;
+.box-room-shadow-occupee {
+-fx-background-color: #4CAF50;
 -fx-border-radius: 7px;
 -fx-effect:  dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
--fx-border-color: red;
+}
+
+.box-room-shadow-libre {
+-fx-background-color: #F52E22;
+-fx-border-radius: 7px;
+-fx-effect:  dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+}
+
+.box-room-shadow .image-view {
+	-fx-effect:  dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+	-fx-border-color: white;
+}
+
+.box-room-shadow-libre .label {
+	-fx-text-fill: white;
+	-fx-text-alignment: center;
+	-fx-font-weight: bold;
+	-fx-font-size: 20;
+}
+
+.box-room-shadow-occupee .label {
+	-fx-text-fill: white;
+	-fx-text-alignment: center;
+	-fx-font-weight: bold;
+	-fx-font-size: 20;
 }

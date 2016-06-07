@@ -30,7 +30,7 @@ public class BoxRoom extends VBox {
 		this(5.0);
 		this.chambre = chambre;
 		String url = "/ressources/img/libre.png";
-		this.getStyleClass().add("box-room-shadow");
+		this.getStyleClass().add("box-room-shadow-occupee");
 		if (image) {
 			url = "/ressources/img/occupe.png";
 		}
