@@ -60,7 +60,7 @@ public class ListRoom extends FlowPane {
 	 */
 	private void putRoom(ArrayList<Chambre> chambres) {
 		for (Chambre chambre : chambres) {
-			BoxRoom boxRoom = new BoxRoom(chambre, false);
+			BoxRoom boxRoom = new BoxRoom(chambre);
 			this.getChildren().add(boxRoom);
 			//Ici on met une marge entre les différentes BoxRoom <====> Chambre
 			setMargin(boxRoom, new Insets(20, 10, 10, 20));

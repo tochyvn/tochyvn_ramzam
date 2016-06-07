@@ -9,7 +9,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.WindowEvent;
 import model.Chambre;
@@ -17,6 +16,7 @@ import model.Chambre;
 public class BoxRoom extends VBox {
 	
 	private Chambre chambre;
+	private static String url = "/ressources/img/occupe.png";
 
 	public BoxRoom() {
 		// TODO Auto-generated constructor stub
@@ -26,21 +26,19 @@ public class BoxRoom extends VBox {
 		super(spacing);
 	}
 	
-	public BoxRoom(Chambre chambre, boolean image) {
+	public BoxRoom(Chambre chambre) {
 		this(5.0);
 		this.chambre = chambre;
-		String url = "/ressources/img/libre.png";
-		this.getStyleClass().add("box-room-shadow-occupee");
-		if (image) {
-			url = "/ressources/img/occupe.png";
-		}
+		this.getStyleClass().add("box-room-shadow");
+		this.setStyle("-fx-background-color: #4CAF50;");
+		
 		Image img = new Image(url);
 		ImageView imageView = new ImageView(img);
-		Pane panel = new Pane();
-		
 		Label roomLabel = new Label(chambre.toString());
-		panel.getChildren().add(roomLabel);
-		this.getChildren().addAll(imageView, panel);
+		Label fumeur = new Label("Fumeur : NON");
+		Label baignoire = new Label("Fumeur : OUI");
+		
+		this.getChildren().addAll(imageView, roomLabel, fumeur, baignoire);
 		//Ajouter l'evenement qui se produira au clique
 		this.addEvent();
 	}
