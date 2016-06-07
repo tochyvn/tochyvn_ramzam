@@ -36,7 +36,7 @@ public class BoxRoom extends VBox {
 		ImageView imageView = new ImageView(img);
 		Label roomLabel = new Label(chambre.toString());
 		Label fumeur = new Label("Fumeur : NON");
-		Label baignoire = new Label("Fumeur : OUI");
+		Label baignoire = new Label("Baignoire : OUI");
 		
 		this.getChildren().addAll(imageView, roomLabel, fumeur, baignoire);
 		//Ajouter l'evenement qui se produira au clique
@@ -62,7 +62,6 @@ public class BoxRoom extends VBox {
 			
 			//Definir une action à la fermeture de la popup
 			popup.setOnCloseRequest(new EventHandler<WindowEvent>() {
-
 				@Override
 				public void handle(WindowEvent event) {
 					System.out.println("Mettre la variable statique de chambre Ã  NULL");
