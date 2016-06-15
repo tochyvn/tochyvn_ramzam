@@ -25,6 +25,7 @@ public class EmployeeController implements Initializable {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		gridEmployee.setAlignment(Pos.CENTER);
+		gridEmployee.setGridLinesVisible(true);
 		employees = FXCollections.observableArrayList();
 		employees.addAll(getEmployees());
 		int line = 1;
